@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>icon linkedin</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="home" transform="translate(-1206.000000, -8892.000000)" fill="#000000" fill-rule="nonzero">
+            <g id="footer" transform="translate(164.000000, 8892.000000)">
+                <g id="icon-linkedin" transform="translate(1042.000000, 0.000000)">
+                    <circle id="Icon-Oval" cx="2.4" cy="2.4" r="2.4"></circle>
+                    <path d="M7.2,6.72797428 L7.2,19.9989068 L11.3012667,19.9989068 L11.3012667,13.4361415 C11.3012667,11.7044373 11.6255377,10.0273955 13.7626796,10.0273955 C15.8704412,10.0273955 15.896557,12.0072669 15.896557,13.5454662 L15.896557,20 L20,20 L20,12.7222508 C20,9.14733119 19.2339369,6.4 15.0749979,6.4 C13.0782283,6.4 11.7397943,7.50090032 11.1924509,8.54276527 L11.1369549,8.54276527 L11.1369549,6.72797428 L7.2,6.72797428 L7.2,6.72797428 Z M0,6.4 L4,6.4 L4,20 L0,20 L0,6.4 Z" id="Icon-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,1025 @@
+/* HERO */
+
+.blog-hero{
+    padding:60px 0 30px;
+}
+
+
+.page-id-503 .footer-boxes,
+.page-id-543 .footer-boxes,
+.page-id-570 .footer-boxes {
+    margin-top: 0;
+}
+
+.booking-popup-showVT #trivia-demo {
+    display: block!important;
+}
+
+.faq {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.row.faq_rw {
+    justify-content: center;
+    align-items: center;
+}
+
+.faq_heading h4 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bod;
+    font-size: 33px;
+    line-height: 44px;
+    color: #000000;
+}
+
+.faq_heading h2 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 64px;
+    color: #000000;
+}
+
+.faq_heading p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    margin-top: 15px;
+}
+
+.faq_cnt {
+    background: #F9F5EA;
+    padding-top: 100px;
+    padding-bottom: 200px;
+}
+
+.faq_cnt .card-body a {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.card-header {
+    border-bottom: 0;
+    background-color: inherit;
+    padding: 0 0 27px 0;
+}
+
+.card {
+    background-color: transparent;
+    border: none;
+}
+
+.card-header:first-child {
+    border-radius: 0;
+}
+
+.card-header a {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 44px;
+    color: #000000;
+}
+
+.card-body a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: 600;
+}
+
+.accordion .card-header:after {
+    font-family: 'FontAwesome';
+    content: "";
+    float: left;
+    background-image: url(/wp-content/uploads/2021/08/icon-minus.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 27px;
+    height: 8px;
+    margin-right: 30px;
+    margin-top: 24px;
+}
+
+.accordion .card-header.collapsed:after {
+    background-image: url(/wp-content/uploads/2021/08/plus.png);
+    width: 26px;
+    height: 26px;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+
+.card-header a span {
+    letter-spacing: 10px;
+    margin-left: 30px;
+}
+
+.faq_cnt h4 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.faq_cnt p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 22px;
+    margin-bottom: 5px;
+}
+
+.card-body {
+    max-width: 800px;
+    padding: 20px;
+/*     border: 2px solid #000; */
+/*     margin-bottom: 20px; */
+}
+
+.border_shw {
+    border: 2px solid #000000;
+}
+
+.faq_cnt .row {
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_top {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8);
+}
+
+.contact_left {
+    padding-right: 0;
+}
+
+.contact_left img {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.top_sub {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 44px;
+    color: #000000;
+    margin-bottom: 0px;
+    margin-top: 20px;
+}
+
+.top_main {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 55px;
+    color: #000000;
+    margin-bottom: 28px;
+}
+
+.contact_right {
+    margin-top: -40px;
+}
+
+.contact_right p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 28px;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.contact_right svg p {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
+    -webkit-text-stroke: 1px;
+}
+
+.contact_frm {
+    background-color: #F3F1E2;
+    padding: 78px 0;
+}
+
+#mlb2-4427353.ml-form-embedContainer .ml-form-embedWrapper {
+    background-color: #f6f6f600 !important;
+}
+
+#mlb2-4427353.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    padding: 14px 29px;
+    border-radius: 0;
+}
+
+#mlb2-4427353.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px !important;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-image: url(/wp-content/themes/escapely/img/btn_bg.svg);
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 192px;
+    cursor: pointer;
+    background-color: #00ffff00 !important;
+}
+
+.ml-subscribe-form h4 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 55px;
+    color: #000000;
+    margin-bottom: 28px;
+}
+
+.ml-subscribe-form .ml-button-horizontal.primary button {
+    margin-top: 30px;
+}
+
+.ml-subscribe-form {
+    width: 100%;
+}
+
+.top_bx {
+    padding-top: 72px;
+    padding-left: 40px;
+    padding-bottom: 79px;
+    background: url(/wp-content/themes/escapely/img/n1.svg);
+    background-size: cover;
+}
+
+.top_bx h4 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 42px;
+    color: #000000;
+    margin-bottom: 12px;
+}
+
+.top_bx h3 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 40px;
+    color: #000000;
+    max-width: 260px;
+}
+
+.btmbx {
+    padding: 80px 0;
+    padding-left: 40px;
+    background: url(/wp-content/themes/escapely/img/n2.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin-top: -10px;
+}
+
+.btmbx h2 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 40px;
+    color: #FFFFFF;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+.btmbx ul {
+    margin: 0;
+    padding: 0;
+}
+
+.btmbx ul li {
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.btmbx ul li img {
+    margin-right: 15px;
+}
+
+.btmbx ul li a {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 31px;
+    color: #FFFFFF;
+}
+
+.page-id-387 .footer-boxes,
+.page-id-431 .footer-boxes,
+.page-id-509 .footer-boxes {
+    display: none;
+}
+
+.frm_right .wpcf7 {
+    margin-left: 32px;
+}
+
+.frm_right label {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.full {
+    margin-bottom: 25px;
+}
+
+.full input[type="text"] {
+    display: block;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+}
+
+.full input[type="email"],
+.full input[type="number"] {
+    display: block;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    padding: 10px 20px;
+}
+
+.page-id-387 .full input[type="number"],
+.page-id-431 .full input[type="number"] {
+    width: 348px;
+}
+
+.full input[type="text"]::-webkit-input-placeholder,
+.full input[type="email"]::-webkit-input-placeholder,
+.full textarea::-webkit-input-placeholder {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #666666;
+}
+
+.full .wpcf7-list-item {
+    display: block;
+    margin: 0;
+}
+
+.full .wpcf7-list-item label {
+    margin: 0;
+}
+
+.full .wpcf7-list-item-label {
+    position: relative;
+    top: -11px;
+    left: 16px;
+}
+
+.full input[type=checkbox] {
+    width: 33px;
+    height: 33px;
+}
+
+.full textarea {
+    display: block;
+    height: 150px;
+    padding: 12px 20px;
+}
+
+.wpcf7-form-control.wpcf7-submit.submit_btn {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-image: url(/wp-content/themes/escapely/img/btn_bg.svg);
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 192px;
+    cursor: pointer;
+}
+
+.page-id-503 .frm_right p,
+.page-id-509 .frm_right p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    /*position: relative;
+    top: 40%;*/
+}
+
+.page-id-431 .frm_left .top_bx {
+    height: 354px;
+}
+
+.give_away {
+    padding-top: 118px;
+    padding-bottom: 164px;
+}
+
+.give_right h4,
+.right_tesimonial h4 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 44px;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.give_right h2,
+.right_tesimonial h2 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 70px;
+    line-height: 64px;
+    color: #000000;
+    margin-bottom: 28px;
+}
+
+.give_right p,
+.right_tesimonial p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+}
+
+.give_away .small-heading {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 33px;
+    line-height: 30px;
+}
+
+.give_left img {
+    margin: 0 auto;
+    display: block;
+    padding-right: 28px;
+}
+
+.give_middle {
+    padding-top: 80px;
+    padding-bottom: 40px;
+    padding-left: 0;
+    padding-right: 0;
+    background: #F9F5EA;
+}
+
+.give_middle h2 {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 42px;
+    color: #000000;
+    margin-bottom: 32px;
+}
+
+.give_middle p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000000;
+    font-weight: 400;
+    margin-bottom: 32px;
+}
+
+.g_full {
+    margin-bottom: 30px;
+}
+
+.g_full input[type="text"] {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    padding: 14px 29px;
+}
+
+.g_full input[type="email"] {
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    padding: 14px 29px;
+}
+
+.g_full input[type="text"]::-webkit-input-placeholder,
+.g_full input[type="email"]::-webkit-input-placeholder {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #666666;
+}
+
+.wpcf7-form-control.wpcf7-submit.give_btn {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 35px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-image: url(/wp-content/themes/escapely/img/btn_bg.svg);
+    border: none;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 192px;
+    cursor: pointer;
+}
+
+span.note {
+    font-size: 14px;
+    line-height: 30px;
+    margin-top: 20px;
+    display: block;
+}
+
+.sponsors_info {
+    padding: 35px 0 50px 0;
+}
+
+.testimonial_tp {
+    padding-top: 54px;
+    padding-bottom: 60px;
+}
+
+.clients {
+    font-family: Amatic SC;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 46px;
+    line-height: 50px;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 54px;
+}
+
+.more_client {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 28px;
+    color: #3D5CEA;
+    text-decoration: underline;
+    text-transform: uppercase;
+    padding-top: 35px;
+    display: block;
+}
+
+.quote_img {
+    float: left;
+    padding-right: 10px;
+    margin-top: -20px;
+}
+
+/* .testimonials_cnt:before {
+    content: "";
+    background: url(/wp-content/themes/escapely/img/icon-quote-big.svg);
+    width: 55px;
+    height: 46px;
+    position: absolute;
+    top: -20px;
+    left: -20px;
+} */
+
+.testimonials_cnt h3 {
+    font-family: 'Nunito Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #000000;
+}
+
+.testimonials_cnt p {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+    color: #000000;
+}
+
+.author_img {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    border: 2px solid #000;
+    margin: 0px auto 20px;
+    border-radius: 100%;
+}
+
+.author_img img {
+    width: 100%;
+}
+
+.testimonials_info {
+    padding: 84px 0;
+}
+
+.testimonials_cnt h4 {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #000000;
+}
+
+.testimonials_cnt span {
+    font-family: Nunito Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    text-align: center;
+    color: #000000;
+    display: block;
+}
+
+.testimonials_cnt .brand {
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media only screen and (min-width:320px) and (max-width:767px) {
+    .row.row_1 .wpcf7-form p {
+        text-align: center;
+    }
+    .top_sub, .top_main{
+        -webkit-text-stroke: 1px;
+    }
+}
+
+@media only screen and (min-width:320px) and (max-width:991px) {
+    .row.row_1 {
+        flex-direction: column-reverse;
+    }
+    .row.row_1 .frm_right {
+        padding-top: 0;
+    }
+    .row.row_1 .frm_left {
+        padding-top: 60px;
+    }
+}
+
+@media only screen and (min-width:991px) and (max-width:1024px) {
+    .top_bx {
+        padding-left: 20px;
+    }
+    .btmbx {
+        padding-left: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .page-id-431 .frm_left .top_bx {
+        height: auto;
+    }
+}
+
+@media only screen and (min-width:768px) and (max-width:990px) {
+    .row.faq_rw {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .faq_cnt .row {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .card-header {
+        text-align: left;
+    }
+    .card-header a span {
+        letter-spacing: 7px;
+        margin-left: 20px;
+    }
+    .card-header a {
+        font-size: 35px;
+        line-height: 25px;
+    }
+    .faq_heading {
+        margin-top: 50px;
+    }
+    .faq_cnt {
+        padding-bottom: 80px;
+    }
+    .contact_top {
+        padding-bottom: 100px;
+        padding-top: 50px;
+    }
+    .contact_left {
+        padding-right: 15px;
+    }
+    .contact_right {
+        margin-top: 40px;
+    }
+    .contact_right svg p {
+        margin-left: -45%;
+    }
+    .row.row_1 {
+        margin: 0;
+    }
+    .top_bx {
+        padding: 80px 0;
+        text-align: center;
+    }
+    .top_bx h3 {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    .btmbx {
+        text-align: center;
+        padding: 80px 0;
+    }
+    .frm_right .wpcf7 {
+        margin-left: 0;
+    }
+    .frm_right {
+        padding-top: 60px;
+    }
+    .full input[type="text"],
+    .full input[type="email"] {
+        width: 100%;
+    }
+    .full textarea {
+        width: 100%;
+    }
+    .accordion .card-header.collapsed:after {
+        margin-top: 0px;
+    }
+    .accordion .card-header:after {
+        margin-top: 12px;
+    }
+    .page-id-503 .frm_right p,
+    .page-id-509 .frm_right p {
+        text-align: center;
+    }
+    .give_away {
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+    .g_full input[type="text"],
+    .g_full input[type="email"] {
+        width: 100%;
+    }
+    .give_middle p br {
+        display: none;
+    }
+    .give_left img {
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .accordion .card-header:after {
+        margin-top: 10px;
+    }
+    .row.faq_rw {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .faq_cnt .row {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .faq_heading {
+        margin-top: 40px;
+    }
+    .card-header a span {
+        display: none;
+    }
+    .card-header {
+        padding: 15px;
+        text-align: left;
+    }
+    .card-header a {
+        font-size: 30px;
+        line-height: 25px;
+    }
+    .faq_cnt {
+        padding-bottom: 100px;
+    }
+    .faq {
+        padding-bottom: 100px;
+    }
+    .contact_top {
+        padding-bottom: 100px;
+    }
+    .contact_left {
+        padding-right: 15px;
+    }
+    .contact_right {
+        margin-top: 40px;
+    }
+    .contact_right svg p {
+        margin-left: -45%;
+    }
+    .row.row_1 {
+        margin: 0;
+    }
+    .top_bx {
+        padding: 80px 0;
+        text-align: center;
+    }
+    .top_bx h3 {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .btmbx {
+        text-align: center;
+        padding: 80px 0 50px;
+    }
+    .frm_right .wpcf7 {
+        margin-left: 0;
+    }
+    .frm_right {
+        padding-top: 60px;
+    }
+    .full input[type="text"],
+    .full input[type="email"] {
+        width: 100%;
+    }
+    .full textarea {
+        width: 100%;
+    }
+    .accordion .card-header.collapsed:after {
+        margin-top: 0px;
+    }
+    .page-id-503 .frm_right p,
+    .page-id-509 .frm_right p {
+        text-align: center;
+    }
+    .give_left img {
+        padding-right: 0px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .row.faq_rw {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .faq_cnt .row {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .faq_heading {
+        margin-top: 40px;
+    }
+    .card-header a span {
+        display: none;
+    }
+    .card-header {
+        padding: 15px;
+        text-align: left;
+    }
+    .card-header a {
+        font-size: 30px;
+        line-height: 25px;
+    }
+    .faq_cnt {
+        padding-bottom: 100px;
+    }
+    .faq {
+        padding-bottom: 100px;
+    }
+    .accordion .card-header.collapsed:after {
+        margin-top: 0px;
+    }
+    .accordion .card-header:after {
+        margin-top: 10px;
+    }
+    .contact_top {
+        padding-bottom: 100px;
+    }
+    .contact_left {
+        padding-right: 15px;
+    }
+    .contact_right {
+        margin-top: 40px;
+    }
+    .contact_right svg p {
+        margin-left: -45%;
+    }
+    .row.row_1 {
+        margin: 0;
+    }
+    .top_bx {
+        padding: 80px 0;
+        text-align: center;
+    }
+    .top_bx h3 {
+        max-width: 100%;
+    }
+    .btmbx {
+        text-align: center;
+        padding: 80px 0;
+    }
+    .frm_right .wpcf7 {
+        margin-left: 0;
+    }
+    .frm_right {
+        padding-top: 60px;
+    }
+    .full input[type="text"],
+    .full input[type="email"] {
+        width: 100%;
+    }
+    .full textarea {
+        width: 100%;
+    }
+    .page-id-503 .frm_right p,
+    .page-id-509 .frm_right p {
+        text-align: center;
+    }
+    .page-id-503 .frm_right,
+    .page-id-509 .frm_right {
+        padding-top: 0;
+    }
+    .give_away {
+        padding: 100px 0;
+    }
+    .g_full input[type="text"],
+    .g_full input[type="email"] {
+        width: 100%;
+    }
+    .give_left img {
+        padding-right: 0px;
+    }
+}
+
+.page-template-template_scenarios .footer-boxes {
+    margin-top: -2%;
+}
+
+.accordion_info .card-header {
+    cursor: pointer;
+}
