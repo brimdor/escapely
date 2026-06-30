@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 981" width="1280" height="981">
+  <image href="final-video.png" x="0" y="0" width="1280" height="981"/>
+
+  <rect x="436" y="437" width="409" height="207" fill="#fff"/>
+  <g fill="#000" font-family="Raleway, Arial, sans-serif" font-size="21">
+    <text x="452" y="468">It seems that your mission was a success! You have the</text>
+    <text x="452" y="497">identities of all six double agents, and now you have the</text>
+    <text x="452" y="526">Ringleader’s identity in your very hands. You hold the</text>
+    <text x="452" y="555">locked parcel. It’s a shame you won’t be finding out the</text>
+    <text x="452" y="584">Ringleader’s identity on your own, but unfortunately it is</text>
+    <text x="452" y="613">not your call to make.</text>
+    <text x="452" y="648">A location comes through on your screen: Umlauf Sculpture</text>
+  </g>
+  <rect x="446" y="657" width="388" height="35" fill="#000"/>
+  <text x="452" y="681" fill="#ffef45" font-family="Raleway, Arial, sans-serif" font-size="21" font-weight="700">Garden at 605 Azie Morton Road.</text>
+  <g fill="#000" font-family="Raleway, Arial, sans-serif" font-size="21">
+    <text x="452" y="718">Agent Nightingale will meet you there. This is the only</text>
+    <text x="452" y="747">rendezvous location for this mission.</text>
+    <text x="452" y="782">Click continue when you’re ready.</text>
+  </g>
+
+  <rect x="436" y="729" width="409" height="47" fill="#fff"/>
+  <g fill="#000" font-family="Raleway, Arial, sans-serif" font-size="26" font-weight="700">
+    <text x="451" y="761">TRANSCRIPT</text>
+  </g>
+</svg>
