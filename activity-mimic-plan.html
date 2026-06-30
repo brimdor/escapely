@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escapely Activity Mimic Plan</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2b;
+      --panel-2: #182238;
+      --text: #e8eefc;
+      --muted: #9fb0d1;
+      --line: #2b3956;
+      --accent: #67e8f9;
+      --accent-2: #a78bfa;
+      --good: #34d399;
+      --warn: #fbbf24;
+      --bad: #fb7185;
+      --chip: #1f2a44;
+      --shadow: 0 18px 40px rgba(0,0,0,.35);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #08101d 0%, #0b1020 100%);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 72px;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 {
+      font-size: 2.35rem;
+      margin: 0 0 10px;
+    }
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.45rem;
+    }
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    .hero {
+      background: radial-gradient(circle at top left, rgba(103,232,249,.12), transparent 30%),
+                  radial-gradient(circle at top right, rgba(167,139,250,.14), transparent 30%),
+                  var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+    .meta, .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--chip);
+      border: 1px solid var(--line);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: .92rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .card {
+      grid-column: span 12;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+    .col-6 { grid-column: span 6; }
+    .col-4 { grid-column: span 4; }
+    .col-8 { grid-column: span 8; }
+    .col-12 { grid-column: span 12; }
+    .kpi {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .kpi > div {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px;
+    }
+    .kpi strong {
+      display: block;
+      font-size: 1.8rem;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    ul { margin: 0; padding-left: 20px; }
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: .95rem;
+    }
+    .matrix th, .matrix td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      text-align: left;
+    }
+    .matrix th {
+      color: var(--accent);
+      font-weight: 700;
+      background: rgba(255,255,255,.02);
+    }
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: .82rem;
+      font-weight: 700;
+    }
+    .local { background: rgba(52,211,153,.12); color: var(--good); border: 1px solid rgba(52,211,153,.35); }
+    .remote { background: rgba(103,232,249,.10); color: var(--accent); border: 1px solid rgba(103,232,249,.30); }
+    .risk { background: rgba(251,113,133,.12); color: var(--bad); border: 1px solid rgba(251,113,133,.30); }
+    .warn { background: rgba(251,191,36,.14); color: var(--warn); border: 1px solid rgba(251,191,36,.30); }
+    .flow {
+      overflow-x: auto;
+      margin-top: 10px;
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #0a1224;
+      padding: 14px;
+    }
+    .legend {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      color: #c6f6ff;
+      background: rgba(255,255,255,.04);
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+    .route {
+      font-size: .88rem;
+      color: var(--muted);
+      word-break: break-all;
+    }
+    .step-list {
+      display: grid;
+      gap: 14px;
+    }
+    .step {
+      background: var(--panel-2);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .step strong { color: var(--accent); }
+    .small { font-size: .92rem; }
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    @media (max-width: 900px) {
+      .col-6, .col-4, .col-8 { grid-column: span 12; }
+      .kpi { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .kpi { grid-template-columns: 1fr; }
+      h1 { font-size: 1.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <div class="muted">Planning document · generated from <code>updates.md</code>, live flow/API investigation, and your clarifications</div>
+      <h1>Escapely Activity Mimic Plan</h1>
+      <p>
+        Replace the current GitHub Pages marketing-site replica with a minimal, purpose-built static mimic for only the Escapely activity-game steps that must change.
+        Unchanged steps stay on Escapely. Changed steps are self-hosted on GitHub Pages and should preserve route naming as closely as possible to the live flow.
+      </p>
+      <div class="chips">
+        <span class="chip">Target game: <strong>SPYHUNTER: AUSTIN</strong></span>
+        <span class="chip">Pages source: GitHub Pages static site</span>
+        <span class="chip">Unchanged pages: remain on Escapely</span>
+        <span class="chip">Old marketing mirror: remove completely</span>
+      </div>
+      <div class="kpi">
+        <div><strong>5</strong><span class="muted">local pages to host in first build</span></div>
+        <div><strong>16+</strong><span class="muted">steps in full live game flow</span></div>
+        <div><strong>2</strong><span class="muted">answer changes</span></div>
+        <div><strong>1</strong><span class="muted">location/video text rewrite</span></div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card col-6">
+        <h2>Confirmed decisions</h2>
+        <ul>
+          <li>Host only the changed steps/pages locally, plus any dependent success pages that must remain seamless after a changed answer submit.</li>
+          <li>Remove the current public marketing-site replica from GitHub Pages entirely.</li>
+          <li>Puzzle #4 input copy changes from <code>ENTER 5-LETTER WORD</code> to <code>ENTER 8-LETTER WORD</code>.</li>
+          <li>Puzzle #4 new answer: <code>NESKOWIN</code>.</li>
+          <li>Puzzle #7 answer changes to <code>TUXEDOS</code>. No letter-count change needed. I previously miscounted; corrected here.</li>
+          <li>Rendezvous location text should use <code>Umlauf Sculpture Garden</code> and <code>605 Azie Morton Road</code>.</li>
+          <li>The <code>MEET ELSEWHERE?</code> option should be removed so Umlauf is the only Agent Nightingale meeting location.</li>
+          <li>Prefer downloading and self-hosting video assets. If not feasible, embed from Escapely cleanly as fallback.</li>
+          <li>The final puzzle itself does not currently require a content change; the last required flow change is the final video-message page text.</li>
+        </ul>
+      </section>
+
+      <section class="card col-6">
+        <h2>Evidence-backed implementation implications</h2>
+        <ul>
+          <li>The repo currently mirrors the public marketing site, not the protected in-game flow. New route files will need to be introduced from scratch.</li>
+          <li>The target game flow is login-gated on Escapely, so local changed pages must be static and self-sufficient.</li>
+          <li>Since only changed steps are self-hosted, navigation must intentionally bridge between Escapely-hosted and GitHub Pages-hosted URLs.</li>
+          <li>Dependent success pages should be hosted when a changed puzzle submits locally and the next user-facing message needs to stay outside the authenticated Escapely flow.</li>
+          <li>Protected media retrieval is still a risk area; plan assumes a second pass may be needed to capture exact video/image assets cleanly.</li>
+        </ul>
+      </section>
+
+      <section class="card col-12">
+        <h2>Hosted-scope decision matrix</h2>
+        <table class="matrix">
+          <thead>
+            <tr>
+              <th>Flow step</th>
+              <th>Live scene</th>
+              <th>Route style to mimic</th>
+              <th>Host locally?</th>
+              <th>Why</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Puzzle #4 — THE CARTOGRAPHER</td>
+              <td><code>solution:65afce29f2217175db3444c5/65afce29f2217175db3444f1</code></td>
+              <td class="route">/solution:65afce29f2217175db3444c5/65afce29f2217175db3444f1/</td>
+              <td><span class="pill local">Yes</span></td>
+              <td>Answer, hint copy, and input label all change.</td>
+            </tr>
+            <tr>
+              <td>Puzzle #4 success page</td>
+              <td><code>congrats:65afce29f2217175db3444f1</code></td>
+              <td class="route">/congrats:65afce29f2217175db3444f1/</td>
+              <td><span class="pill local">Yes</span></td>
+              <td>Dependent post-submit page after a locally hosted puzzle. Keeps the user from bouncing immediately back into auth-gated flow after a changed answer submit.</td>
+            </tr>
+            <tr>
+              <td>Puzzle #7 — THE SNAKE</td>
+              <td><code>solution:65afce29f2217175db3444c5/65afce29f2217175db3444fc</code></td>
+              <td class="route">/solution:65afce29f2217175db3444c5/65afce29f2217175db3444fc/</td>
+              <td><span class="pill local">Yes</span></td>
+              <td>Accepted answer and hint-answer accordion change.</td>
+            </tr>
+            <tr>
+              <td>Puzzle #7 success page</td>
+              <td><code>solution:65afce29f2217175db3444c5/65afce29f2217175db344543</code></td>
+              <td class="route">/solution:65afce29f2217175db3444c5/65afce29f2217175db344543/</td>
+              <td><span class="pill local">Yes</span></td>
+              <td>Dependent post-submit bridge from the changed Puzzle #7 to the changed video-message page.</td>
+            </tr>
+            <tr>
+              <td>Final video-message page — INTEL LOCATED</td>
+              <td><code>solution:65afce29f2217175db3444c5/65afce29f2217175db344527</code></td>
+              <td class="route">/solution:65afce29f2217175db3444c5/65afce29f2217175db344527/</td>
+              <td><span class="pill local">Yes</span></td>
+              <td>Location text changes, rendezvous logic changes, and the <code>MEET ELSEWHERE?</code> behavior must be removed.</td>
+            </tr>
+            <tr>
+              <td>Final puzzle / RENDEZVOUS</td>
+              <td><code>solution:65afce29f2217175db3444c5/65afce29f2217175db34452e</code></td>
+              <td class="route">Stay on Escapely</td>
+              <td><span class="pill remote">No</span></td>
+              <td>No requested content change at this stage. Keep external unless later review shows the preceding local page must directly hand off into a local copy for continuity.</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="footer-note">
+          Current recommendation: first build should host exactly these 5 routes. If later inspection shows the final puzzle page must be local for continuity or asset/auth reasons, add it as a sixth route.
+        </p>
+      </section>
+
+      <section class="card col-12">
+        <h2>Full flow diagram</h2>
+        <div class="legend">
+          <span class="pill remote">Escapely-hosted unchanged</span>
+          <span class="pill local">GitHub Pages-hosted changed</span>
+          <span class="pill warn">Bridge between domains</span>
+        </div>
+        <div class="flow">
+          <svg width="1800" height="380" viewBox="0 0 1800 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Escapely flow diagram">
+            <defs>
+              <style>
+                .t{font: 12px Inter, Arial, sans-serif; fill:#e8eefc}
+                .s{font: 11px Inter, Arial, sans-serif; fill:#9fb0d1}
+                .r{fill:#14304a;stroke:#67e8f9;stroke-width:1.2}
+                .l{fill:#123227;stroke:#34d399;stroke-width:1.2}
+                .w{fill:#3b2b11;stroke:#fbbf24;stroke-width:1.2}
+                .a{stroke:#7e93b8;stroke-width:1.4;marker-end:url(#m)}
+              </style>
+              <marker id="m" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+                <path d="M0,0 L8,3 L0,6 Z" fill="#7e93b8"/>
+              </marker>
+            </defs>
+            <rect x="20" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="34" y="74" class="t">Start / Login</text>
+            <text x="34" y="92" class="s">live Escapely</text>
+
+            <rect x="170" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="184" y="74" class="t">Game Mode</text>
+            <text x="184" y="92" class="s">choose casual</text>
+
+            <rect x="320" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="334" y="74" class="t">Before Start</text>
+            <text x="334" y="92" class="s">prep screen</text>
+
+            <rect x="470" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="486" y="74" class="t">Puzzle #1a</text>
+            <text x="486" y="92" class="s">username</text>
+
+            <rect x="620" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="636" y="74" class="t">Puzzle #1b</text>
+            <text x="636" y="92" class="s">password</text>
+
+            <rect x="770" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="788" y="74" class="t">Video Msg</text>
+            <text x="788" y="92" class="s">open Mail Bundle</text>
+
+            <rect x="920" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="938" y="74" class="t">Puzzle #2</text>
+            <text x="938" y="92" class="s">bilbo</text>
+
+            <rect x="1070" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="1086" y="74" class="t">Puzzle #2 OK</text>
+            <text x="1086" y="92" class="s">next envelope</text>
+
+            <rect x="1220" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="1238" y="74" class="t">Puzzle #3a</text>
+            <text x="1238" y="92" class="s">721</text>
+
+            <rect x="1370" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="1388" y="74" class="t">Puzzle #3b</text>
+            <text x="1388" y="92" class="s">diamond</text>
+
+            <rect x="1520" y="50" rx="12" ry="12" width="130" height="58" class="r"/>
+            <text x="1538" y="74" class="t">Puzzle #3 OK</text>
+            <text x="1538" y="92" class="s">open Map Envelope</text>
+
+            <rect x="200" y="180" rx="12" ry="12" width="140" height="62" class="l"/>
+            <text x="214" y="204" class="t">Puzzle #4</text>
+            <text x="214" y="222" class="s">local · NESKOWIN</text>
+
+            <rect x="380" y="180" rx="12" ry="12" width="140" height="62" class="l"/>
+            <text x="394" y="204" class="t">#4 Success</text>
+            <text x="394" y="222" class="s">local bridge page</text>
+
+            <rect x="560" y="180" rx="12" ry="12" width="140" height="62" class="r"/>
+            <text x="576" y="204" class="t">Puzzle #5</text>
+            <text x="576" y="222" class="s">live Escapely</text>
+
+            <rect x="740" y="180" rx="12" ry="12" width="140" height="62" class="r"/>
+            <text x="756" y="204" class="t">Puzzle #5 OK</text>
+            <text x="756" y="222" class="s">live Escapely</text>
+
+            <rect x="920" y="180" rx="12" ry="12" width="140" height="62" class="r"/>
+            <text x="936" y="204" class="t">Puzzle #6</text>
+            <text x="936" y="222" class="s">live Escapely</text>
+
+            <rect x="1100" y="180" rx="12" ry="12" width="140" height="62" class="r"/>
+            <text x="1116" y="204" class="t">Puzzle #6 OK</text>
+            <text x="1116" y="222" class="s">live Escapely</text>
+
+            <rect x="1280" y="180" rx="12" ry="12" width="140" height="62" class="l"/>
+            <text x="1296" y="204" class="t">Puzzle #7</text>
+            <text x="1296" y="222" class="s">local · TUXEDOS</text>
+
+            <rect x="1460" y="180" rx="12" ry="12" width="140" height="62" class="l"/>
+            <text x="1476" y="204" class="t">#7 Success</text>
+            <text x="1476" y="222" class="s">local bridge page</text>
+
+            <rect x="1640" y="180" rx="12" ry="12" width="140" height="62" class="l"/>
+            <text x="1654" y="204" class="t">Video Msg</text>
+            <text x="1654" y="222" class="s">local · Umlauf only</text>
+
+            <rect x="1640" y="290" rx="12" ry="12" width="140" height="62" class="w"/>
+            <text x="1654" y="314" class="t">Final Puzzle</text>
+            <text x="1654" y="332" class="s">external handoff</text>
+
+            <line x1="150" y1="79" x2="170" y2="79" class="a"/>
+            <line x1="300" y1="79" x2="320" y2="79" class="a"/>
+            <line x1="450" y1="79" x2="470" y2="79" class="a"/>
+            <line x1="600" y1="79" x2="620" y2="79" class="a"/>
+            <line x1="750" y1="79" x2="770" y2="79" class="a"/>
+            <line x1="900" y1="79" x2="920" y2="79" class="a"/>
+            <line x1="1050" y1="79" x2="1070" y2="79" class="a"/>
+            <line x1="1200" y1="79" x2="1220" y2="79" class="a"/>
+            <line x1="1350" y1="79" x2="1370" y2="79" class="a"/>
+            <line x1="1500" y1="79" x2="1520" y2="79" class="a"/>
+
+            <line x1="1590" y1="108" x2="1590" y2="145" class="a"/>
+            <line x1="1590" y1="145" x2="270" y2="145" class="a"/>
+            <line x1="270" y1="145" x2="270" y2="180" class="a"/>
+
+            <line x1="340" y1="211" x2="380" y2="211" class="a"/>
+            <line x1="520" y1="211" x2="560" y2="211" class="a"/>
+            <line x1="700" y1="211" x2="740" y2="211" class="a"/>
+            <line x1="880" y1="211" x2="920" y2="211" class="a"/>
+            <line x1="1060" y1="211" x2="1100" y2="211" class="a"/>
+            <line x1="1240" y1="211" x2="1280" y2="211" class="a"/>
+            <line x1="1420" y1="211" x2="1460" y2="211" class="a"/>
+            <line x1="1600" y1="211" x2="1640" y2="211" class="a"/>
+            <line x1="1710" y1="242" x2="1710" y2="290" class="a"/>
+          </svg>
+        </div>
+      </section>
+
+      <section class="card col-8">
+        <h2>Page-by-page change plan</h2>
+        <div class="step-list">
+          <div class="step">
+            <strong>1. Puzzle #4 — THE CARTOGRAPHER</strong>
+            <ul>
+              <li>Clone layout and styling from the live page as closely as practical.</li>
+              <li>Change answer validation target from the current answer to <code>NESKOWIN</code>.</li>
+              <li>Change input label to <code>ENTER 8-LETTER WORD</code>.</li>
+              <li>Hint overlay: update answer accordion to <code>NESKOWIN</code>.</li>
+              <li>Hint accordion text becomes: <code>First, locate your three coordinates to find two four-digit numbers associated with each. (Fun Fact: Home of the Proposal Rock at Neskowin Beach.)</code></li>
+              <li>Successful submit routes to local <code>congrats:65afce29f2217175db3444f1</code>.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <strong>2. Puzzle #4 success page</strong>
+            <ul>
+              <li>Recreate the success-state page as a local bridge.</li>
+              <li>Keep instruction: open Silver Clutch Envelope and scan QR code.</li>
+              <li>Primary CTA goes back to the live Escapely Puzzle #5 route.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <strong>3. Puzzle #7 — THE SNAKE</strong>
+            <ul>
+              <li>Clone live page structure and preserve current letter-count prompt unless live audit shows otherwise.</li>
+              <li>Accepted answer becomes <code>TUXEDOS</code>.</li>
+              <li>Hint answer accordion becomes <code>TUXEDOS</code>.</li>
+              <li>Successful submit routes to local success page <code>.../65afce29f2217175db344543/</code>.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <strong>4. Puzzle #7 success page</strong>
+            <ul>
+              <li>Host locally because it bridges directly into the changed final video-message page.</li>
+              <li>Preserve existing page look and next-step framing, then route into the local video-message route.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <strong>5. Final video-message page — INTEL LOCATED</strong>
+            <ul>
+              <li>Replace location text with corrected Umlauf language: <code>Umlauf Sculpture Garden at 605 Azie Morton Road, Austin, TX 78704</code>.</li>
+              <li>Use your revised urgency copy and remove any wording that suggests alternate locations.</li>
+              <li>Remove the <code>MEET ELSEWHERE?</code> option entirely from this local version.</li>
+              <li>Prefer self-hosted embedded video; fallback is clean external embed if download/hosting is blocked.</li>
+              <li>Next CTA hands off to the unchanged live final puzzle.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card col-4">
+        <h2>Proposed route strategy</h2>
+        <ul class="small">
+          <li>Preserve Escapely-like route names using literal folder names where possible.</li>
+          <li>Examples:</li>
+        </ul>
+        <ul class="small">
+          <li><code>/solution:65afce29f2217175db3444c5/65afce29f2217175db3444f1/</code></li>
+          <li><code>/congrats:65afce29f2217175db3444f1/</code></li>
+          <li><code>/solution:65afce29f2217175db3444c5/65afce29f2217175db344543/</code></li>
+        </ul>
+        <p class="small muted">If GitHub Pages path handling proves awkward with literal colons, fallback is a thin compatibility redirect layer that maps Escapely-like paths to slash-safe static files while preserving the visible route intent.</p>
+      </section>
+
+      <section class="card col-6">
+        <h2>Asset and video strategy</h2>
+        <ol>
+          <li>Capture exact live-page assets for the 5 local routes.</li>
+          <li>Attempt to download all required images/video and store them inside the repo under a dedicated static asset tree.</li>
+          <li>If video files are too large or protected in a way that blocks static hosting, embed the original source cleanly while leaving HTML/CSS/UI local.</li>
+          <li>Do not depend on Escapely-hosted images for local pages unless forced by access restrictions; prefer full self-hosting for all non-video assets.</li>
+          <li>Keep a source manifest documenting which assets are local copies vs external embeds.</li>
+        </ol>
+      </section>
+
+      <section class="card col-6">
+        <h2>Risks to manage</h2>
+        <ul>
+          <li><span class="pill risk">Auth/media risk</span> Some protected assets may be difficult to extract cleanly.</li>
+          <li><span class="pill risk">Cross-domain continuity</span> Users will move between GitHub Pages and Escapely unless more pages are later mirrored.</li>
+          <li><span class="pill warn">Route compatibility</span> GitHub Pages may require path-compat workarounds for exact Escapely-like naming.</li>
+          <li><span class="pill warn">UI fidelity</span> Final local pages depend on clean asset capture from the live site.</li>
+          <li><span class="pill warn">Hidden text/popup dependencies</span> Some live overlays may reference old answers or old locations and need removal when captured.</li>
+        </ul>
+      </section>
+
+      <section class="card col-12">
+        <h2>Implementation phases</h2>
+        <div class="step-list">
+          <div class="step">
+            <strong>Phase 1 — Repo reset for the new purpose</strong>
+            <ul>
+              <li>Remove the current marketing-site replica from GitHub Pages scope.</li>
+              <li>Create a minimal static structure centered only on required mimic routes/assets.</li>
+              <li>Add a focused README explaining that this repo now hosts selective activity-game overrides, not a public-site mirror.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <strong>Phase 2 — Asset capture and route scaffolding</strong>
+            <ul>
+              <li>Capture HTML structure, styles, media, and overlays from the 5 local target pages.</li>
+              <li>Create route folders matching the selected live scene/congrats IDs.</li>
+              <li>Set up shared CSS/JS for modal, accordion, answer validation, and CTA transitions.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <strong>Phase 3 — Content and logic overrides</strong>
+            <ul>
+              <li>Implement new answer logic and copy for Puzzle #4 and Puzzle #7.</li>
+              <li>Implement corrected Umlauf-only location messaging and remove alternate-meeting behavior.</li>
+              <li>Wire local success pages and external handoff links.</li>
+            </ul>
+          </div>
+          <div class="step">
+            <strong>Phase 4 — Verification</strong>
+            <ul>
+              <li>Manually test every route and transition in sequence.</li>
+              <li>Verify local answers advance correctly.</li>
+              <li>Verify external handoffs land on the intended unchanged Escapely pages.</li>
+              <li>Verify embedded video behavior in both logged-in and not-logged-in scenarios.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="card col-12">
+        <h2>Recommended next action</h2>
+        <p>
+          Proceed with implementation using the 5-route local-host model above, while treating exact asset/video capture as the main unknown. If asset capture reveals that the final puzzle page must also be local for continuity, expand the plan from 5 local pages to 6 without changing the overall architecture.
+        </p>
+        <p class="muted">
+          File path: <code>/home/brimdor/repos/escapely/activity-mimic-plan.html</code>
+        </p>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
