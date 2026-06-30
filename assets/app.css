@@ -1,1 +1,13 @@
-html,body{margin:0;padding:0;background:#000;min-height:100vh}.tooltip,.footer__container__loginNotRequired>div,.submit--btn,.video-react-big-play-button,.video-react-play-control,.back_btn_hint,.dialog-btn-dismiss,.MuiAccordionSummary-root{cursor:pointer}#dialog-host{position:relative;z-index:2147483647}#dialog-host .MuiDialog-root{position:fixed;z-index:2147483647;inset:0}.MuiDialog-root.hidden{display:none}
+
+html,body{margin:0;padding:0;min-height:100dvh;background:#000;overflow-x:hidden;overscroll-behavior:none}
+body{font-family:Raleway,Arial,sans-serif}
+body>#root{position:relative!important;left:auto!important;top:0!important;width:min(100vw,430px)!important;max-width:430px!important;height:100dvh!important;margin:0 auto!important;overflow-x:hidden!important;overflow-y:auto!important;background:#fff}
+#dialog-host{position:fixed;inset:0;z-index:2147483647;pointer-events:none}
+#dialog-host>*{pointer-events:auto}
+.local-dialog-root,.MuiDialog-root{position:fixed!important;inset:0!important;z-index:2147483647!important}
+.footer__dropdown{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(100vw,430px);z-index:2147483646}
+.footer__submenu__list[hidden]{display:none!important}
+.video-react-big-play-button,.video-react-poster{display:none!important}
+.video-react .video-react-control-bar{opacity:1!important}
+input[type=text],textarea{font-size:16px!important}
+@media (min-width: 431px){body{display:block}}
