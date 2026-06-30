@@ -1,22 +1,19 @@
-# Escapely Replica
+# Escapely Activity Override
 
-A static replica of [escapely.com](https://escapely.com) for demonstration purposes.
+This repository no longer mirrors the Escapely marketing site.
 
-## Pages
+It now hosts a small set of GitHub Pages routes that override specific in-game steps for the Escapely activity flow `SPYHUNTER: AUSTIN`.
 
-This replica includes all pages from Escapely, including:
-- Homepage
-- Escape the City product pages (50+ cities)
-- Team Building pages
-- Blog posts
-- About, Contact, Testimonials, etc.
+## Hosted routes
 
-## GitHub Pages
-
-This repo is configured to serve from the `main` branch root.
+- `solution:65afce29f2217175db3444c5/65afce29f2217175db3444f1/` — Puzzle #4 override
+- `congrats:65afce29f2217175db3444f1/` — Puzzle #4 success page
+- `solution:65afce29f2217175db3444c5/65afce29f2217175db3444fc/` — Puzzle #7 override
+- `solution:65afce29f2217175db3444c5/65afce29f2217175db344543/` — Puzzle #7 success page
+- `solution:65afce29f2217175db3444c5/65afce29f2217175db344527/` — final video-message override
 
 ## Notes
 
-- This is a static replica. Dynamic features (cart, checkout, login, forms) are non-functional.
-- Images, CSS, JS, and fonts are preserved from the original site.
-- External fonts (Google Fonts, Typekit) and CDN assets require an internet connection to load.
+- Unchanged flow steps remain on Escapely.
+- This is a static GitHub Pages build.
+- Final media/video source capture may still require a follow-up pass if direct asset extraction is blocked.
