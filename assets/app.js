@@ -112,13 +112,11 @@
     const paper = $('.MuiDialog-paper,.MuiDialog-paperScrollPaper', root);
     const footer = $('.Hints-footer', root);
     if(!paper || !footer) return;
-    const stray = Array.from(paper.children).filter(el => {
-      if(!(el instanceof HTMLElement)) return false;
-      if(el.classList.contains('MuiDialogContent-root')) return false;
-      if(el.classList.contains('MuiDialogActions-root')) return false;
-      return el.classList.contains('MuiAccordion-root');
+    const accordions = Array.from(paper.querySelectorAll('.MuiAccordion-root'));
+    accordions.forEach(el => {
+      if(!(el instanceof HTMLElement)) return;
+      footer.appendChild(el);
     });
-    stray.forEach(el => footer.appendChild(el));
   }
 
   function wireDialog(root){
