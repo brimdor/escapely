@@ -117,10 +117,17 @@
 
   function openHtmlDialog(html, opts={}){
     if(!host) return;
-    host.innerHTML = `<div class="MuiDialog-root local-dialog-root" role="presentation">${html}</div>`;
+    const isHintDialog = /class=["'][^"']*Hints[^"']*["']/.test(html);
+    host.innerHTML = `<div class="MuiDialog-root local-dialog-root${isHintDialog ? ' local-dialog--hint' : ''}" role="presentation">${html}</div>`;
     document.body.style.overflow = 'hidden';
     if(opts.hintHash) history.replaceState(null, '', location.pathname + location.search + '#hintOpen');
     wireDialog(host);
+    if(isHintDialog){
+      const footer = host.querySelector('.Hints-footer');
+      const content = host.querySelector('.MuiDialogContent-root');
+      if(content) content.scrollTop = 0;
+      if(footer) footer.scrollTop = 0;
+    }
   }
 
   async function openDialog(path, opts={}){

@@ -19,9 +19,17 @@ input[type=text],textarea{font-size:16px!important}
 .Hints{display:flex;flex-direction:column;background:#fff;min-height:0;max-height:calc(100dvh - 32px)}
 .Hints table{flex:0 0 auto}
 .Hints-container{flex:0 0 auto;padding:0 16px}
-.Hints-footer{display:flex!important;flex-direction:column!important;gap:12px;overflow-y:auto!important;min-height:0;padding:12px 12px 20px;background:#fff}
+.Hints-footer{display:flex!important;flex-direction:column!important;gap:12px;overflow-y:auto!important;min-height:0;padding:12px 12px 20px;background:#fff;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
 .Hints-footer .MuiAccordion-root{margin:0!important}
 .MuiAccordion-root+.MuiAccordion-root{margin-top:12px!important}
 .MuiAccordionSummary-root{align-items:center!important}
 .MuiCollapse-root.MuiCollapse-hidden{display:none!important}
+.local-dialog--hint .MuiDialog-container,.local-dialog--hint .MuiDialog-scrollPaper{align-items:stretch!important;padding:0!important}
+.local-dialog--hint .MuiDialog-paper,.local-dialog--hint .MuiDialog-paperScrollPaper{width:min(100vw,430px)!important;max-width:430px!important;height:100dvh!important;max-height:100dvh!important;border-radius:0!important;box-shadow:none!important}
+.local-dialog--hint .MuiDialogContent-root{display:flex!important;flex-direction:column!important;height:100%!important;max-height:none!important;padding:0!important;overflow:hidden!important}
+.local-dialog--hint .MuiTypography-root.MuiDialogContentText-root{display:flex!important;flex-direction:column!important;flex:1 1 auto!important;min-height:0!important;margin:0!important}
+.local-dialog--hint .Hints{flex:1 1 auto!important;height:100%!important;max-height:none!important}
+.local-dialog--hint .Hints-container{padding:0 16px 8px!important}
+.local-dialog--hint .Hints-footer{flex:1 1 auto!important;min-height:0!important;max-height:none!important;padding:12px 12px calc(env(safe-area-inset-bottom,0px) + 28px)!important}
+.local-dialog--hint .Hints table{position:sticky;top:0;z-index:2}
 @media (min-width:431px){body{display:block}}
