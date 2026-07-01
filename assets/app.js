@@ -108,6 +108,19 @@
     });
   }
 
+  function normalizeHintDialog(root){
+    const paper = $('.MuiDialog-paper,.MuiDialog-paperScrollPaper', root);
+    const footer = $('.Hints-footer', root);
+    if(!paper || !footer) return;
+    const stray = Array.from(paper.children).filter(el => {
+      if(!(el instanceof HTMLElement)) return false;
+      if(el.classList.contains('MuiDialogContent-root')) return false;
+      if(el.classList.contains('MuiDialogActions-root')) return false;
+      return el.classList.contains('MuiAccordion-root');
+    });
+    stray.forEach(el => footer.appendChild(el));
+  }
+
   function wireDialog(root){
     wireAccordions(root);
     $all('.back_btn_hint,.dialog-btn-dismiss', root).forEach(btn => btn.addEventListener('click', e => { e.preventDefault(); closeDialog(); }));
@@ -121,6 +134,7 @@
     host.innerHTML = `<div class="MuiDialog-root local-dialog-root${isHintDialog ? ' local-dialog--hint' : ''}" role="presentation">${html}</div>`;
     document.body.style.overflow = 'hidden';
     if(opts.hintHash) history.replaceState(null, '', location.pathname + location.search + '#hintOpen');
+    if(isHintDialog) normalizeHintDialog(host);
     wireDialog(host);
     if(isHintDialog){
       const footer = host.querySelector('.Hints-footer');
