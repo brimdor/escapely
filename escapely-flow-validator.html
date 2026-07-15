@@ -27,6 +27,10 @@ button{background:var(--panel-2);border:1px solid var(--line);color:var(--text);
 button:hover{background:var(--line)}
 .summary{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:22px}
 .summary ul{margin:8px 0 0;padding-left:20px;color:var(--muted)}
+.step-check{display:flex;align-items:center;gap:10px;cursor:pointer;position:absolute;top:-10px;left:16px;background:var(--panel-2);border:1px solid var(--line);padding:4px 12px;border-radius:999px;font-size:.78rem;font-weight:700;color:var(--accent)}
+.step-check input{width:16px;height:16px;accent-color:var(--good);cursor:pointer}
+.step-check input:checked+span{text-decoration:line-through;color:var(--muted)}
+.step.checked{opacity:.6;border-color:rgba(52,211,153,.35)}
 @media(max-width:600px){.wrap{padding:20px 14px 40px}}
 </style>
 </head>
@@ -93,8 +97,8 @@ function render(){
     if(s.url) links.push(`<a class="btn" href="${s.url}" target="_blank">Open live Escapely page</a>`);
     if(s.hintUrl) links.push(`<a class="btn" href="${s.hintUrl}" target="_blank">Open live hints</a>`);
     if(s.answer) links.push(`<button class="btn copy" onclick="copyText('${s.answer}')">Copy answer</button>`);
-    return `<div class="step">
-      <div class="step-num">Step ${i+1}</div>
+    return `<div class="step" data-step="${i}">
+      <label class="step-check"><input type="checkbox" data-check="${i}"><span>Step ${i+1}</span></label>
       <div class="title">${s.title}</div>
       <div class="meta">${chips.join('')}</div>
       ${s.notes ? `<p style="margin:0 0 10px">${s.notes}</p>` : ''}
@@ -103,6 +107,20 @@ function render(){
   }).join('');
 }
 
+function saveChecks(){
+  const checked = [];
+  document.querySelectorAll('input[data-check]').forEach(cb=>{ if(cb.checked) checked.push(cb.dataset.check); });
+  localStorage.setItem('escapelyFlowChecked', JSON.stringify(checked));
+}
+function loadChecks(){
+  try{
+    const saved = JSON.parse(localStorage.getItem('escapelyFlowChecked') || '[]');
+    saved.forEach(idx=>{
+      const cb = document.querySelector('input[data-check="'+idx+'"]');
+      if(cb){ cb.checked = true; cb.closest('.step').classList.add('checked'); }
+    });
+  }catch(e){}
+}
 function copyText(text){navigator.clipboard.writeText(text);}
 function copyAnswers(){
   const text = steps.filter(s=>s.answer).map(s=>`${s.title}: ${s.answer}`).join('\n');
@@ -115,6 +133,12 @@ function openAllUrls(){
   });
 }
 render();
+document.getElementById('flow').addEventListener('change', e=>{
+  if(!e.target.dataset.check) return;
+  e.target.closest('.step').classList.toggle('checked', e.target.checked);
+  saveChecks();
+});
+loadChecks();
 </script>
 </body>
 </html>
