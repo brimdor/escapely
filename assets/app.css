@@ -1,6 +1,6 @@
 html,body{margin:0;padding:0;min-height:100dvh;width:100%;background:#000;overflow-x:hidden;overscroll-behavior:none;-webkit-text-size-adjust:100%}
 body{font-family:Raleway,Arial,sans-serif;touch-action:manipulation}
-body>#root{position:relative!important;left:auto!important;top:0!important;width:100%!important;max-width:430px!important;min-height:100dvh!important;height:100dvh!important;margin:0 auto!important;overflow-x:hidden!important;overflow-y:auto!important;background:#fff}
+body>#root{position:relative!important;left:auto!important;top:0!important;width:100%!important;max-width:430px!important;min-height:100dvh!important;height:100dvh!important;margin:0 auto!important;overflow-x:hidden!important;overflow-y:auto!important;background:#fff;padding-bottom:70px!important}
 #dialog-host{position:fixed;inset:0;z-index:2147483647;pointer-events:none}
 #dialog-host>*{pointer-events:auto}
 .local-dialog-root,.MuiDialog-root{position:fixed!important;inset:0!important;z-index:2147483647!important}
@@ -33,3 +33,11 @@ input[type=text],textarea{font-size:16px!important}
 .local-dialog--hint .Hints-footer{flex:1 1 auto!important;min-height:0!important;max-height:none!important;padding:12px 12px calc(env(safe-area-inset-bottom,0px) + 28px)!important}
 .local-dialog--hint .Hints table{position:sticky;top:0;z-index:2}
 @media (min-width:431px){body{display:block}}
+
+/* Footer full-width override for mimic pages */
+.fixed__div{position:fixed!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;max-width:none!important;z-index:2147483645}
+.footer__container__loginNotRequired{position:fixed!important;left:0!important;right:0!important;bottom:0!important;width:100vw!important;max-width:none!important;display:grid!important;grid-template-columns:repeat(3,1fr)!important;align-items:center!important;justify-items:center!important;background:#000!important;padding:8px 0 calc(env(safe-area-inset-bottom,0px) + 8px)!important;margin:0!important;z-index:2147483645}
+.footer__container__loginNotRequired > div{width:100%;text-align:center;display:flex!important;justify-content:center!important;flex-direction:column!important;align-items:center!important}
+.footer__container__loginNotRequired img{height:32px;margin-bottom:4px}
+.footer__container__loginNotRequired span{color:#fff;font-size:12px}
+.footer__dropdown{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(100vw,430px);z-index:2147483646}
