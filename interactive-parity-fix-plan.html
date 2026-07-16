@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Escapely Mimic Parity Repair Plan</title>
+  <style>
+    :root {
+      --bg: #0b0f14;
+      --panel: #121923;
+      --panel-2: #182230;
+      --text: #e8eef7;
+      --muted: #9eb0c7;
+      --accent: #7cc4ff;
+      --accent-2: #ffd166;
+      --good: #7bd88f;
+      --warn: #ffb86b;
+      --bad: #ff7b72;
+      --border: #263445;
+      --code: #0f141c;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1 { font-size: 2rem; margin: 0 0 10px; }
+    h2 {
+      margin: 34px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      font-size: 1.35rem;
+    }
+    h3 { margin: 24px 0 10px; font-size: 1.05rem; }
+    p, li { color: var(--text); }
+    .muted { color: var(--muted); }
+    .hero, .card {
+      background: linear-gradient(180deg, var(--panel), var(--panel-2));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.22);
+    }
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+    .grid.two { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+    .grid.three { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .pill {
+      display: inline-block;
+      margin: 4px 8px 0 0;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--code);
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .status-good { color: var(--good); }
+    .status-warn { color: var(--warn); }
+    .status-bad { color: var(--bad); }
+    .route {
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+    }
+    .route code, code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      background: var(--code);
+      color: var(--accent);
+      padding: 2px 6px;
+      border-radius: 6px;
+      word-break: break-word;
+    }
+    ul, ol { padding-left: 20px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: block;
+    }
+    thead, tbody, tr { width: 100%; display: table; table-layout: fixed; }
+    th, td {
+      padding: 12px 10px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+      text-align: left;
+      font-size: .95rem;
+    }
+    th { color: var(--accent-2); background: rgba(255,255,255,0.03); }
+    tr:last-child td { border-bottom: 0; }
+    .note {
+      border-left: 4px solid var(--accent-2);
+      padding: 12px 14px;
+      background: rgba(255, 209, 102, 0.08);
+      border-radius: 10px;
+    }
+    .danger {
+      border-left: 4px solid var(--bad);
+      padding: 12px 14px;
+      background: rgba(255, 123, 114, 0.08);
+      border-radius: 10px;
+    }
+    .success {
+      border-left: 4px solid var(--good);
+      padding: 12px 14px;
+      background: rgba(123, 216, 143, 0.08);
+      border-radius: 10px;
+    }
+    .small { font-size: .92rem; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <h1>Escapely Mimic Parity Repair Plan</h1>
+      <p class="muted">Plan only. No implementation work beyond analysis is included in this file.</p>
+      <div>
+        <span class="pill">Repo: <code>/home/brimdor/repos/escapely</code></span>
+        <span class="pill">Branch: <code>main</code></span>
+        <span class="pill">Current HEAD: <code>6a358ab</code></span>
+        <span class="pill">Target: GitHub Pages mobile-only mimic parity</span>
+      </div>
+    </section>
+
+    <h2>1. Goal</h2>
+    <div class="card">
+      <p>Bring the hosted mimic flow up to <strong>interaction parity</strong> with the original Escapely pages for the active surprise path, while preserving the requested modified answers, names, text, and route continuity.</p>
+      <ul>
+        <li>All modified mimic pages must behave like the originals on mobile.</li>
+        <li><code>WHAT DO I NEED?</code>, <code>HINT</code>, <code>FUN FACT</code>, <code>TRANSCRIPT</code>, <code>MENU</code>, and <code>SHOP</code> must function like the original interaction model.</li>
+        <li>Changed copy, changed answers, and changed handoffs must remain intact.</li>
+        <li>Pages should present as mobile-only so layout behavior matches the live Escapely experience more closely.</li>
+      </ul>
+    </div>
+
+    <h2>2. Scope From Your Review</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>In scope now</h3>
+        <ul>
+          <li>Puzzle #4</li>
+          <li>Puzzle #4 success</li>
+          <li>Puzzle #7</li>
+          <li>Puzzle #7 success</li>
+          <li>Final modified page</li>
+          <li>Rendezvous</li>
+          <li>Shared Menu / Hint / Shop / mobile-shell behavior</li>
+          <li>Mission Completed handoff back to original page</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Explicitly out of scope for this pass</h3>
+        <ul>
+          <li>Ringleader content redesign</li>
+          <li>Deep redesign of later pages beyond what is needed for continuity</li>
+          <li>Any permanent credential storage in repo files</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>3. Route-by-Route Repair Matrix</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Route</th>
+          <th>Current issue</th>
+          <th>Required fix</th>
+          <th>Target outcome</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>/solution:.../65afce29f2217175db3444f1/</code><br><span class="muted">Puzzle #4</span></td>
+          <td><code>WHAT DO I NEED?</code> dead or incomplete; <code>HINT</code> not exact-original behavior.</td>
+          <td>Clone original popup and hint flows exactly; keep answer override in hint content as <code>NESKOWIN</code>.</td>
+          <td>Popup + hint sheet function exactly like original, with only the requested answer/content edits.</td>
+        </tr>
+        <tr>
+          <td><code>/congrats:65afce29f2217175db3444f1/</code><br><span class="muted">Puzzle #4 success</span></td>
+          <td>Name still wrong; <code>FUN FACT</code> not exact-original behavior.</td>
+          <td>Change <code>Laura Salem</code> to <code>Laura Neskowin</code>; rebuild <code>FUN FACT</code> interaction using original modal/popup structure; apply updated fun-fact content from prior requirements.</td>
+          <td>Name and fun-fact flow both align with requested modified story while behaving like original UX.</td>
+        </tr>
+        <tr>
+          <td><code>/solution:.../65afce29f2217175db3444fc/</code><br><span class="muted">Puzzle #7</span></td>
+          <td>Dynamic agent reference still visible; hint flow not exact; keyboard overlap on mobile.</td>
+          <td>Replace sentence with <code>Be on the lookout.</code>; rebuild original hint behavior with answer updated to <code>TUXEDOS</code>; enforce mobile viewport/input scroll behavior so focused input remains visible above keyboard.</td>
+          <td>Original-feeling page with changed text, changed answer, and usable mobile input behavior.</td>
+        </tr>
+        <tr>
+          <td><code>/solution:.../65afce29f2217175db344543/</code><br><span class="muted">Puzzle #7 success</span></td>
+          <td>Wrong name.</td>
+          <td>Change <code>Monica Quinton</code> to <code>Monica Tuxedos</code>.</td>
+          <td>Success page matches modified answer identity cleanly.</td>
+        </tr>
+        <tr>
+          <td><code>/solution:.../65afce29f2217175db344527/</code><br><span class="muted">Final modified page</span></td>
+          <td>Play overlay unwanted; transcript broken.</td>
+          <td>Remove extra play-logo overlay; rebuild <code>TRANSCRIPT</code> control to match original exact behavior and preserve updated Umlauf text.</td>
+          <td>Video area and transcript interaction match the original pattern without extra overlay clutter.</td>
+        </tr>
+        <tr>
+          <td><code>/solution:.../65afce29f2217175db34452e/</code><br><span class="muted">Rendezvous</span></td>
+          <td><code>WHAT DO I NEED?</code> broken; <code>HINT</code> broken; mobile keyboard overlap; hint answer/content outdated; correct answer changed.</td>
+          <td>Restore original popup + hint behavior; update hint answer to <code>Code to Access Lock Box is: 9-5-2 (top-down)</code>; update accepted answer to <code>Caleb Bryant</code>; fix mobile input visibility on focus.</td>
+          <td>Fully working modified rendezvous page with exact-original interaction model and updated puzzle logic.</td>
+        </tr>
+        <tr>
+          <td><code>/solution:.../65afce29f2217175db344538/</code><br><span class="muted">Ringleader</span></td>
+          <td>Future redesign planned.</td>
+          <td>Do not spend time redesigning in this pass. Keep only what is necessary for continuity if still needed during verification.</td>
+          <td>No extra work beyond minimal flow continuity.</td>
+        </tr>
+        <tr>
+          <td><code>/congrats:65afce29f2217175db344538/</code><br><span class="muted">Mission Completed</span></td>
+          <td>Should not be mimic-hosted.</td>
+          <td>Remove mimic dependency and hand off to the original page instead.</td>
+          <td>Original Mission Completed view resumes ownership at the correct point.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>4. Core Technical Direction</h2>
+    <div class="card">
+      <ol>
+        <li><strong>Stop approximating interactions.</strong> Reuse the original live DOM fragments for dialogs, footers, popups, accordion hint sheets, and action wiring wherever possible.</li>
+        <li><strong>Treat every interactive control as first-class.</strong> No custom shortcut modal if the original uses a different structure.</li>
+        <li><strong>Use mobile-only layout assumptions.</strong> Lock the mimic presentation to phone-width behavior and tune viewport/input-scroll handling for software keyboard safety.</li>
+        <li><strong>Minimize local flow where safe, but do not break continuity.</strong> Mission Completed can hand back to the original page; other handoffs remain local only where needed to avoid auth/context breakage.</li>
+      </ol>
+    </div>
+
+    <h2>5. Work Plan</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>Phase A — Source capture and diff map</h3>
+        <ul>
+          <li>Re-capture the exact original DOM and interactions for:</li>
+          <li>Puzzle #4 popup, hint sheet, and success-page fun fact</li>
+          <li>Puzzle #7 hint sheet and input-focus behavior</li>
+          <li>Final-page transcript behavior and video controls</li>
+          <li>Rendezvous popup, hint sheet, and input-focus behavior</li>
+          <li>Menu and Shop actions on all relevant pages</li>
+          <li>Document every text/value override separately from behavior overrides.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Phase B — Page rebuilds</h3>
+        <ul>
+          <li>Rebuild each affected page around original interactive structure rather than simplified wrappers.</li>
+          <li>Inject only the requested content changes:</li>
+          <li><code>NESKOWIN</code>, <code>TUXEDOS</code>, <code>Laura Neskowin</code>, <code>Monica Tuxedos</code>, <code>Caleb Bryant</code>, revised lock-box hint answer, revised Puzzle #7 sentence, revised Umlauf transcript/video text.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Phase C — Shared behavior fixes</h3>
+        <ul>
+          <li>Implement a common interaction layer for Menu / Hint / Shop where the original behavior can be mirrored consistently.</li>
+          <li>Handle focus-scroll logic for mobile text inputs so the active field stays visible above the keyboard.</li>
+          <li>Remove unneeded extra play overlay while preserving the original video control behavior.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Phase D — Flow cleanup</h3>
+        <ul>
+          <li>Remove Mission Completed mimic endpoint from the canonical path.</li>
+          <li>Replace that handoff with the correct original Escapely Mission Completed URL.</li>
+          <li>Keep Ringleader untouched except for any minimum continuity glue needed by the new handoff.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>6. Shared Behavior Plan</h2>
+    <div class="grid two">
+      <div class="card">
+        <h3>Hint / popup parity</h3>
+        <ul>
+          <li>Use original hint-sheet structure: same header, same close behavior, same accordion expansion pattern, same nested hint sections.</li>
+          <li>Do not replace with simplified custom cards.</li>
+          <li>Only patch the changed answer or changed copy inside the relevant accordion sections.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Menu / Shop parity</h3>
+        <ul>
+          <li>Inspect and reproduce what those controls do on the original pages in the authenticated flow.</li>
+          <li>If they open specific UI rather than navigate, mimic that UI; if they navigate, preserve the correct target.</li>
+          <li>No dead footer controls on hosted pages.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Mobile-only shell</h3>
+        <ul>
+          <li>Present mimic pages as mobile device views only.</li>
+          <li>Constrain layout width to the original phone-like frame behavior.</li>
+          <li>Prevent desktop-style centering/blank margins from interfering with phone parity decisions.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Keyboard-safe inputs</h3>
+        <ul>
+          <li>Test focus behavior on Puzzle #7 and Rendezvous.</li>
+          <li>On focus, scroll active input into visible space above the software keyboard.</li>
+          <li>Validate both portrait mobile viewport and narrow-screen desktop emulation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>7. Exact Content Changes To Preserve</h2>
+    <div class="card">
+      <ul>
+        <li>Puzzle #4 answer path remains <code>NESKOWIN</code>.</li>
+        <li>Puzzle #4 success identity becomes <code>Laura Neskowin</code>.</li>
+        <li>Puzzle #7 narrative sentence becomes <code>Be on the lookout.</code></li>
+        <li>Puzzle #7 answer path remains <code>TUXEDOS</code>.</li>
+        <li>Puzzle #7 success identity becomes <code>Monica Tuxedos</code>.</li>
+        <li>Final modified page retains the Umlauf rendezvous change and working transcript flow.</li>
+        <li>Rendezvous accepted answer becomes <code>Caleb Bryant</code>.</li>
+        <li>Rendezvous hint answer becomes <code>Code to Access Lock Box is: 9-5-2 (top-down)</code>.</li>
+        <li>Mission Completed should resolve to the original page, not a mimic.</li>
+      </ul>
+    </div>
+
+    <h2>8. Verification Plan</h2>
+    <div class="card">
+      <h3>Local verification</h3>
+      <ul>
+        <li>Automated browser checks for every affected route.</li>
+        <li>Click each of these on each applicable page: <code>WHAT DO I NEED?</code>, <code>HINT</code>, <code>FUN FACT</code>, <code>TRANSCRIPT</code>, <code>MENU</code>, <code>SHOP</code>, <code>CONTINUE</code>, <code>SUBMIT</code>.</li>
+        <li>Assert changed answers route correctly.</li>
+        <li>Assert mobile input remains visible during focus on Puzzle #7 and Rendezvous.</li>
+      </ul>
+      <h3>Live verification after push</h3>
+      <ul>
+        <li>Push to <code>main</code>.</li>
+        <li>Wait for GitHub Pages build completion.</li>
+        <li>Run live browser automation against the public Pages URLs.</li>
+        <li>Confirm no dead controls remain on in-scope mimic pages.</li>
+      </ul>
+    </div>
+
+    <h2>9. Risks / Open Questions</h2>
+    <div class="grid two">
+      <div class="danger">
+        <strong>Menu / Shop exactness may widen scope.</strong>
+        <div class="small">If these controls open deeper authenticated UI flows, I may need to selectively mimic additional fragments or define a precise compatibility behavior after inspecting the live originals again.</div>
+      </div>
+      <div class="danger">
+        <strong>Mission Completed handoff depends on stable original route behavior.</strong>
+        <div class="small">I will verify that the original page can be entered cleanly from the modified path without a new auth/context break.</div>
+      </div>
+      <div class="note">
+        <strong>Mobile keyboard fixes require device-style verification.</strong>
+        <div class="small">Desktop browser checks alone are not enough; I will test narrow mobile viewports and focus/scroll behavior explicitly.</div>
+      </div>
+      <div class="success">
+        <strong>Authenticated source inspection is available.</strong>
+        <div class="small">I can use the provided access out-of-band for live inspection, but I will not write credentials into repo files or plan artifacts.</div>
+      </div>
+    </div>
+
+    <h2>10. Deliverables After Approval</h2>
+    <div class="card">
+      <ul>
+        <li>Updated mimic pages with exact-interaction parity for all in-scope pages.</li>
+        <li>Mobile-only layout behavior aligned with original page presentation.</li>
+        <li>Working Menu / Hint / Shop / popup / transcript controls on in-scope mimic pages.</li>
+        <li>Correct local-vs-original handoff at Mission Completed.</li>
+        <li>Evidence-backed final report with live verification results after GitHub Pages deploy.</li>
+      </ul>
+    </div>
+
+    <h2>11. Recommendation</h2>
+    <div class="card">
+      <p>I recommend implementing this as an <strong>interaction-parity pass</strong>, not a sequence of one-off patches. The recurring failures you found are all symptoms of the same root problem: the current mimic pages still use simplified local behavior in places where they need the original Escapely interaction model. Rebuilding that shared interaction layer once will be cleaner and more reliable than continuing to patch each button independently.</p>
+    </div>
+  </div>
+</body>
+</html>
