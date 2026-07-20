@@ -54,10 +54,14 @@
     heading.textContent = 'Words of Love';
     section.appendChild(heading);
 
+    const list = document.createElement('div');
+    list.className = 'engagement-messages__list';
+    section.appendChild(list);
+
     return section;
   }
 
-  function createMessageElement(messageData) {
+  function createMessageElement(messageData, index, total) {
     const article = document.createElement('article');
     article.className = 'engagement-message';
 
@@ -71,7 +75,19 @@
 
     article.appendChild(body);
     article.appendChild(footer);
-    return article;
+
+    // Add spacer between messages, not after the last one.
+    const wrapper = document.createElement('div');
+    wrapper.className = 'engagement-message__wrapper';
+    wrapper.appendChild(article);
+
+    if (index < total - 1) {
+      const spacer = document.createElement('div');
+      spacer.className = 'engagement-message__spacer';
+      wrapper.appendChild(spacer);
+    }
+
+    return wrapper;
   }
 
   function renderError(container, error) {
@@ -101,8 +117,9 @@
         return response.json();
       })
       .then((data) => {
+        const list = section.querySelector('.engagement-messages__list');
         const messages = sortMessages(data.messages || []);
-        messages.forEach((msg) => section.appendChild(createMessageElement(msg)));
+        messages.forEach((msg, index) => list.appendChild(createMessageElement(msg, index, messages.length)));
         target.appendChild(section);
       })
       .catch((error) => {
