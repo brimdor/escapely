@@ -47,7 +47,7 @@ input[type=text],textarea{font-size:16px!important}
 .engagement-messages__list{display:flex;flex-direction:column;gap:0}
 .engagement-message__wrapper{margin:0}
 .engagement-message{padding:18px 0}
-.engagement-message__body{margin:0 0 10px;font-size:1rem;line-height:1.55;color:#222}
+.engagement-message__body{margin:0 0 10px;font-size:1rem;line-height:1.55;color:#222;font-style:normal}
 .engagement-message__body::before{content:'"'}
 .engagement-message__body::after{content:'"'}
 .engagement-message__footer{font-size:.9rem;font-weight:700;color:#555;text-align:right}
