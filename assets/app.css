@@ -43,12 +43,11 @@ input[type=text],textarea{font-size:16px!important}
 .footer__dropdown{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(100vw,430px);z-index:2147483646}
 
 /* Engagement messages component */
-.engagement-messages{padding:16px 20px 28px}
-.engagement-messages__heading{text-align:center;font-size:1.35rem;font-weight:700;margin:0 0 24px;color:#1a1a1a}
+.engagement-messages{padding:28px 20px}
 .engagement-messages__list{display:flex;flex-direction:column;gap:0}
 .engagement-message__wrapper{margin:0}
 .engagement-message{padding:18px 0}
-.engagement-message__body{margin:0 0 10px;font-size:1rem;line-height:1.55;color:#222;font-style:italic}
+.engagement-message__body{margin:0 0 10px;font-size:1rem;line-height:1.55;color:#222}
 .engagement-message__body::before{content:'"'}
 .engagement-message__body::after{content:'"'}
 .engagement-message__footer{font-size:.9rem;font-weight:700;color:#555;text-align:right}

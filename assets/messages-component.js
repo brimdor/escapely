@@ -49,11 +49,6 @@
     section.className = 'engagement-messages';
     section.setAttribute('aria-label', 'Messages from family and friends');
 
-    const heading = document.createElement('h3');
-    heading.className = 'engagement-messages__heading';
-    heading.textContent = 'Words of Love';
-    section.appendChild(heading);
-
     const list = document.createElement('div');
     list.className = 'engagement-messages__list';
     section.appendChild(list);
