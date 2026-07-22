@@ -52,4 +52,7 @@ input[type=text],textarea{font-size:16px!important}
 .engagement-message__spacer{height:1px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.2),transparent);margin:0 8px}
 .engagement-messages__error{padding:12px 0;color:#d32f2f;text-align:center}
 
-.solutionTitle{font-family:'Yesteryear',cursive!important}
+/* Self-hosted PF DIN Mono fonts so the original Escapely page font works on GitHub Pages mimic sites */
+@font-face{font-family:"PF DIN Mono";src:url("fonts/PFDINMono-Regular.otf") format("opentype")}
+@font-face{font-family:"PF DIN Mono Bold";src:url("fonts/PFDINMono-Bold.otf") format("opentype")}
+@font-face{font-family:"PF DIN Mono Medium";src:url("fonts/PFDINMono-Medium.otf") format("opentype")}
